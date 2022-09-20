@@ -33,6 +33,7 @@ export default class Serverest {
         Cypress.env('bearer', resposta.body.authorization.slice(7))
     }
 
+
     // Produtos //
 
     static buscarProdutos() {

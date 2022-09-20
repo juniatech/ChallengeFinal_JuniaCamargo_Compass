@@ -1,5 +1,28 @@
 // COMANDOS PERSONALIZADOS 
 
+import Ajv from 'ajv'
+const ajv = new Ajv({allErrors: true, verbose: true, strict: false})
+
+// schema para validação do contrato 
+// forçando erro para a construção de teste
+Cypress.Commands.add('contractValidation', (res, schema, status) => {
+    cy.log('Validando contrato para ' + schema + ' com status ' + status)
+    cy.fixture(`schemas/${schema}/${status}.json`).then(schema => {
+        const validate = ajv.compile(schema)
+        const valid = validate(res.body)
+
+        if(!valid){
+           var errors = ''
+           for(let each in validate.errors){
+               let err = validate.errors[each]
+               errors += `\n${err.instancePath} ${err.message}, but receive ${typeof err.data}` //recebeu um valor string, mas deveria ter recebido um valor inteiro
+           }
+           throw new Error('Erros encontrados na validação de contrato, por favor verifique: ' + errors)
+        }
+        return true
+    })
+})
+
 // Deve impedir o cadastro do usuário com email já utilizado
 Cypress.Commands.add('POSTUsuarios400', () => { 
     return cy.request({

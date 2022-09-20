@@ -22,7 +22,7 @@ describe('Casos de teste sobre a rota /produtos da API Serverest', () => {
         })
         })
 
-        it.only('Deve postar um novo produto com suceso', () => {
+        it('Deve postar um novo produto com sucesso', () => {
             Serverest.cadastrarProdutoComSucesso().then(res => {
                 ValidaServerest.validarCadastroDeProdutoComSucesso(res)
             })
