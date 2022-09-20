@@ -1,4 +1,10 @@
 /// <reference types="cypress" />
+
+// reporter cypress mochawesome
+module.exports = (on, config) => {
+    require('cypress-mochawesome-reporter/plugin')(on);
+  };
+
 // ***********************************************************
 // INDICAR QUAIS PASTAS O CYPRESS IRÁ RECONHECER COMO AMBIENTE DE EXECUÇÃO
 const fs = require('fs-extra');
