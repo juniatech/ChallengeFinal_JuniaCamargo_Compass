@@ -18,6 +18,10 @@ Testando a branch
 
 # Comandos de execussão
 
+# Plano de teste
+
+# Postman
+
 # Ferramentas e tecnologias utilizadas
 
 # Referências
