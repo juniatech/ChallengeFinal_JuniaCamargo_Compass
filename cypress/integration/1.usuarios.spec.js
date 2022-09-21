@@ -10,7 +10,7 @@ describe('Casos de teste sobre a rota /usuarios da API Serverest', () => {
     it('Deve buscar todos os usuários cadastrados na Serverest', () => {
         Serverest.buscarUsuarios().then(res => {
             cy.log('Será validado o contrato')
-            cy.contractValidation(res, 'get-usuarios', 200)
+            cy.contractValidation(res, '2.usuarios/get', 200)
             ValidaServerest.validarBuscaDeUsuarios(res)
             //ValidaServerest.validarBuscaDeUsuarios(res)
         })
@@ -20,7 +20,7 @@ describe('Casos de teste sobre a rota /usuarios da API Serverest', () => {
     // fazer service object
     it('Não deve postar um novo usuário administrador existente', () => {
         cy.POSTUsuarios400().then(res => {
-            cy.contractValidation(res, 'post-usuarios', 400)
+            cy.contractValidation(res, '2.usuarios/post-usuarios', 400)
             expect(res.body.message).to.be.eq('Este email já está sendo usado')
         })
     })

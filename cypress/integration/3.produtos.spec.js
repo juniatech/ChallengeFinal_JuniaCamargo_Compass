@@ -5,12 +5,14 @@ import ValidaServerest from '../services/validaServerest.service'
 
 describe('Casos de teste sobre a rota /produtos da API Serverest', () => {
 
+    //GET/produtos(200)
     it('Deve buscar todos os produtos cadastrados', () => {
         Serverest.buscarProdutos().then(res => {
             ValidaServerest.validarBuscaDeProdutos(res)
         })
     })
 
+    //POST/login(200)
     context('Logar com sucesso', () => {
         beforeEach('Logar', () => {
             Serverest.buscarUsuarioParaLogin()
@@ -22,6 +24,7 @@ describe('Casos de teste sobre a rota /produtos da API Serverest', () => {
         })
         })
 
+        //POST/produtos(201)
         it('Deve postar um novo produto com sucesso', () => {
             Serverest.cadastrarProdutoComSucesso().then(res => {
                 ValidaServerest.validarCadastroDeProdutoComSucesso(res)

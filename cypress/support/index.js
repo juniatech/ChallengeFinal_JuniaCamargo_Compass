@@ -1,4 +1,3 @@
-import 'cypress-mochawesome-reporter/register';
 
 // ***********************************************************
 // This example support/index.js is processed and
@@ -17,6 +16,8 @@ import 'cypress-mochawesome-reporter/register';
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+import 'cypress-mochawesome-reporter/register';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

@@ -7,14 +7,10 @@
     "numTestsKeptInMemory": 5,
     "screenshotsFolder": "reports/screenshots",
     "reporter": "cypress-mochawesome-reporter",
-    "reporterOptions": {
-        "reporterEnabled": "mochawesome",
-        "mochawesomeReporterOptions": {
-            "reportDir": "cypress/reports/mocha",
-            "quite": true,
-            "overwrite": false,
-            "html": false,
-            "json": true
-        }
+    "reporterOptions": 
+    { 
+        "reportDir": "cypress/report",
+        "charts": true,
+        "reportPageTitle": "report de automação"
     }
 }
