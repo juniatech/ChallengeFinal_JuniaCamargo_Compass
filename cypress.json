@@ -1,0 +1,16 @@
+{
+    "$schema": "https://on.cypress.io/cypress.schema.json",
+    "video": false,
+    "viewportWidth": 1600,
+    "viewportHeight": 900,
+    "chromeWebSecurity": false,
+    "numTestsKeptInMemory": 5,
+    "screenshotsFolder": "reports/screenshots",
+    "reporter": "cypress-mochawesome-reporter",
+    "reporterOptions": 
+    { 
+        "reportDir": "cypress/report",
+        "charts": true,
+        "reportPageTitle": "report de automação"
+    }
+}
